@@ -24,16 +24,17 @@
                 this.gender = !(gender) ? 'M'      : gender;
                 this.level  = !(level ) ? 0        : level;
                 this.class  = null;
-            }
-            
-            setLevel( value ) {
-                this.level += value;
+                this.life   = 100;
             }
             
             setClass( value ) {
                 var _class = ['Magic', 'Fighter'];
                 this.class = _class[value];
             }
+            
+            setLevel ( value ) { this.level += value; } 
+            setDamage( value ) { this.life = (this.life - value) < 1 ? 0     : this.life - value; } 
+            setLife  ( value ) { this.life = (this.life + value) > 100 ? 100 : this.life + value; }
             
         }
         
@@ -92,6 +93,13 @@
         console.log(hero.level);
         console.log(hero.class);
         console.log(hero.wellcome());
+        
+        console.log('life: ' + hero.life);
+        hero.setDamage(5);
+        hero.setDamage(8);
+        console.log('life: ' + hero.life);
+        hero.setLife(4);
+        console.log('life: ' + hero.life);
         
         var ObjAttr = new Attribute();
         console.log(ObjAttr.speed   );

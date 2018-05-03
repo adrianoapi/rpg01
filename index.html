@@ -10,7 +10,7 @@
 	  
       <script>
         
-        class Hero {
+        class Persona {
             
             /**
              * Initialize attributes Hero with zero case nothing defined
@@ -26,17 +26,21 @@
                 this.class  = null;
             }
             
-            wellcome() {
-                return 'Hello ' + this.class + ' ' + this.name;
-            }
-            
             setLevel( value ) {
                 this.level += value;
             }
             
             setClass( value ) {
-                var _class = ['magic', 'fighter'];
+                var _class = ['Magic', 'Fighter'];
                 this.class = _class[value];
+            }
+            
+        }
+        
+        class Hero extends Persona {
+            
+            wellcome() {
+                return 'Hello Hero ' + this.class + ' ' + this.name;
             }
             
         }

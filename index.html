@@ -12,26 +12,50 @@
         
         class Hero {
             
+            /**
+             * Initialize attributes Hero with zero case nothing defined
+             * @param {type} name
+             * @param {type} gender
+             * @param {type} level
+             * @returns {Hero}
+             */
             constructor( name, gender, level ) {
                 this.name   = !(name  ) ? 'Player' : name;
                 this.gender = !(gender) ? 'M'      : gender;
                 this.level  = !(level ) ? 0        : level;
+                this.class  = null;
             }
             
             wellcome() {
-                return 'Hello ' + this.name;
+                return 'Hello ' + this.class + ' ' + this.name;
             }
             
             setLevel( value ) {
                 this.level += value;
             }
             
-            _class( value ) {
-                this.class = ['magic', 'fighter'];
-                return this.class[value];
+            setClass( value ) {
+                var _class = ['magic', 'fighter'];
+                this.class = _class[value];
             }
             
-            attribute( strength, dexterity, endurance, speed, inteligence ,wisdom, perception, concentration ) {
+        }
+        
+        class Attribute {
+            
+            /**
+             * Initialize defualt attributes with zero
+             * @param {type} strength
+             * @param {type} dexterity
+             * @param {type} endurance
+             * @param {type} speed
+             * @param {type} inteligence
+             * @param {type} wisdom
+             * @param {type} perception
+             * @param {type} concentration
+             * @returns {Attribute}
+             */
+            constructor( strength, dexterity, endurance, speed, inteligence ,wisdom, perception, concentration) {
                 this.strength      = !(strength     ) ? 0 : strength;
                 this.dexterity     = !(dexterity    ) ? 0 : dexterity;
                 this.endurance     = !(endurance    ) ? 0 : endurance;
@@ -42,18 +66,36 @@
                 this.concentration = !(concentration) ? 0 : concentration;
             }
             
+            setStrength     ( value ) { this.strength      += value; }
+            setDexterity    ( value ) { this.dexterity     += value; }
+            setEndurance    ( value ) { this.endurance     += value; }
+            setSpeed        ( value ) { this.speed         += value; }
+            setInteligence  ( value ) { this.inteligence   += value; }
+            setWisdom       ( value ) { this.wisdom        += value; }
+            setPerception   ( value ) { this.perception    += value; }
+            setConcentration( value ) { this.concentration += value; }
+            
         }
         
         
         
         var hero = new Hero();
         console.log(hero.name  );
-        console.log(hero._class(1));
+        console.log(hero.setClass(0));
         hero.setLevel(1);
         hero.setLevel(1);
         hero.setLevel(1);
         console.log(hero.level);
+        console.log(hero.class);
         console.log(hero.wellcome());
+        
+        var ObjAttr = new Attribute();
+        console.log(ObjAttr.speed   );
+        ObjAttr.setSpeed(1);
+        ObjAttr.setSpeed(1);
+        ObjAttr.setSpeed(1);
+        ObjAttr.setSpeed(2);
+        console.log(ObjAttr.speed   );
         
       </script>
    </body>

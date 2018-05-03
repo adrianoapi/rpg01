@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>RPG01</title>
+      <meta charset="utf-8">
+   </head>
+   <body>
+    
+       
+	  
+      <script>
+        
+        class Hero {
+            
+            constructor( name, gender, level ) {
+                this.name   = !(name  ) ? 'Player' : name;
+                this.gender = !(gender) ? 'M'      : gender;
+                this.level  = !(level ) ? 0        : level;
+            }
+            
+            wellcome() {
+                return 'Hello ' + this.name;
+            }
+            
+            setLevel( value ) {
+                this.level += value;
+            }
+            
+            _class( value ) {
+                this.class = ['magic', 'fighter'];
+                return this.class[value];
+            }
+            
+            attribute( strength, dexterity, endurance, speed, inteligence ,wisdom, perception, concentration ) {
+                this.strength      = !(strength     ) ? 0 : strength;
+                this.dexterity     = !(dexterity    ) ? 0 : dexterity;
+                this.endurance     = !(endurance    ) ? 0 : endurance;
+                this.speed         = !(speed        ) ? 0 : speed;
+                this.inteligence   = !(inteligence  ) ? 0 : inteligence;
+                this.wisdom        = !(wisdom       ) ? 0 : wisdom;
+                this.perception    = !(perception   ) ? 0 : perception;
+                this.concentration = !(concentration) ? 0 : concentration;
+            }
+            
+        }
+        
+        
+        
+        var hero = new Hero();
+        console.log(hero.name  );
+        console.log(hero._class(1));
+        hero.setLevel(1);
+        hero.setLevel(1);
+        hero.setLevel(1);
+        console.log(hero.level);
+        console.log(hero.wellcome());
+        
+      </script>
+   </body>
+</html>

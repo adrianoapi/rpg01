@@ -22,7 +22,7 @@ class Persona {
     }
 
     setLevel ( value ) { this.level += value; } 
-    setDamage( value ) { this.life = (this.life - value) < 1 ? 0     : this.life - value; } 
+    setDamage( value ) { this.life = (this.life - value) < 1   ? 0   : this.life - value; } 
     setLife  ( value ) { this.life = (this.life + value) > 100 ? 100 : this.life + value; }
 
 }
@@ -49,7 +49,7 @@ class Attribute {
      * @param {type} concentration
      * @returns {Attribute}
      */
-    constructor( strength, dexterity, endurance, speed, inteligence ,wisdom, perception, concentration) {
+    constructor( strength, dexterity, endurance, speed, inteligence ,wisdom, perception, concentration ) {
         this.strength      = !(strength     ) ? 0 : strength;
         this.dexterity     = !(dexterity    ) ? 0 : dexterity;
         this.endurance     = !(endurance    ) ? 0 : endurance;
@@ -69,6 +69,36 @@ class Attribute {
     setPerception   ( value ) { this.perception    += value; }
     setConcentration( value ) { this.concentration += value; }
 
+}
+
+class Skills {
+    
+    /**
+     * Initialize defualt skills with zero
+     * @param {type} bandage
+     * @param {type} fencing
+     * @param {type} luck
+     * @param {type} survival
+     * @param {type} swiming
+     * @param {type} magic
+     * @returns {Skills}
+     */
+    constructor( bandage, fencing, luck, survival , swiming, magic ) {
+        this.bandage  = !(bandage ) ? 0 : bandage;
+        this.fencing  = !(fencing ) ? 0 : fencing;
+        this.luck     = !(luck    ) ? 0 : luck;
+        this.survival = !(survival) ? 0 : survival;
+        this.swiming  = !(swiming ) ? 0 : swiming;
+        this.magic    = !(magic   ) ? 0 : magic;
+    }
+    
+    setBandage ( value ) { this.bandage  += value; }
+    setFencing ( value ) { this.fencing  += value; }
+    setLuck    ( value ) { this.luck     += value; }
+    setSurvival( value ) { this.survival += value; }
+    setSwiming ( value ) { this.swiming  += value; }
+    setMagic   ( value ) { this.magic    += value; }
+    
 }
 
 
